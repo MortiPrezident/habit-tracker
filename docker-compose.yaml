@@ -10,6 +10,16 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - backend
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - backend
 #
 #  app:
 #    build:
@@ -43,3 +53,4 @@ networks:
 
 volumes:
   postgres_data:
+  redis_data:
