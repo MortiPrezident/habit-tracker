@@ -1,6 +1,6 @@
 import httpx
 from bot.config_data.config import API_URL
-from bot.redis.session_manager import get_tokens, save_tokens
+from bot.token_utils.session_manager import get_tokens, save_tokens
 
 
 async def get_refresh_tokens(refresh_token: str):

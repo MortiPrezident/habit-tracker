@@ -1,6 +1,6 @@
 from telebot.types import Message
 from bot.loader import bot_tracker
-from bot.redis.session_manager import save_tokens
+from bot.token_utils.session_manager import save_tokens
 import httpx
 from bot.config_data.config import API_URL
 from bot.user_interface.keyboard import KeyboardFactory as kb

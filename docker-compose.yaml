@@ -12,8 +12,8 @@ services:
       - backend
 
   redis:
-    image: redis:7-alpine
-    container_name: redis
+    image: token_utils:7-alpine
+    container_name: token_utils
     ports:
       - '6379:6379'
     volumes:

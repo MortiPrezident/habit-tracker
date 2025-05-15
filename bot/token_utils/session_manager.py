@@ -1,4 +1,4 @@
-from bot.redis.redis_client import get_redis
+from bot.token_utils.redis_client import get_redis
 from bot.config_data.config import TTL_SECOND
 
 
