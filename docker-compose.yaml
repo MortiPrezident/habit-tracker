@@ -12,9 +12,9 @@ services:
       - backend
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
-      interval: 10s
+      interval: 3600s
       timeout: 5s
-      retries: 5
+      retries: 2
       start_period: 20s
 
   redis:
@@ -31,9 +31,9 @@ services:
       - backend
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
-      interval: 10s
+      interval: 3600s
       timeout: 5s
-      retries: 5
+      retries: 2
       start_period: 10s
 
   app:
@@ -54,9 +54,9 @@ services:
       - backend
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:5000/health" ]
-      interval: 10s
+      interval: 3600s
       timeout: 5s
-      retries: 3
+      retries: 2
       start_period: 10s
     command: ["/app/entrypoint.sh"]
 
@@ -67,6 +67,8 @@ services:
     restart: always
     env_file:
       - .env
+    environment:
+      - TZ=Europe/Moscow
     depends_on:
       app:
         condition: service_healthy
