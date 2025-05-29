@@ -6,3 +6,9 @@ app = FastAPI()
 
 app.include_router(auth.router)
 app.include_router(habit_service.router)
+
+
+
+@app.get("/health")
+async def check_health():
+    return {"message": True}
