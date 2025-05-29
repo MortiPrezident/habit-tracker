@@ -14,4 +14,6 @@ DATABASE_URL = env.str("SYNC_DATABASE_URL")
 DEFAULT_COMMANDS = (
     ("start", "Запустить бота"),
     ("register", "зарегистрироваться"),
+    ("add_habit", "добавить привычку"),
+    ("list_habits", "Просмотреть список привычек"),
 )
