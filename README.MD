@@ -37,7 +37,7 @@
 ### Установка
 1. Склонируй репозиторий:
    ```bash
-   git clone https://github.com/your-repo/habit-tracker.git
+   git clone https://github.com/MortiPrezident/habit-tracker.git
    cd habit-tracker
 
 2. Создай файл `.env`  и заполни переменные:
