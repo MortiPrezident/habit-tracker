@@ -3,6 +3,7 @@ from bot.config_data.config import REDIS_URL
 
 _redis: Redis | None = None
 
+
 async def get_redis() -> Redis:
     global _redis
 
