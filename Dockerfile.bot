@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.10
 
 RUN apt-get update && apt-get install -y supervisor \
     && rm -rf /var/lib/apt/lists/*
@@ -14,6 +14,7 @@ COPY .env /app/.env
 COPY bot/ /app/bot
 COPY supervisord.bot.conf /etc/supervisor/conf.d/supervisord.bot.conf
 
+ENV PYTHONPATH=/app
 
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.bot.conf"]
